@@ -265,20 +265,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // 「もう一度診断する」ボタン
-    restartBtn.addEventListener('click', function () {
-        answers = { q1: '', q2: '', q3: '', q4: '', q5: '' };
-        currentQuestionIndex = 0;
-        if (q2OptionsContainer) q2OptionsContainer.innerHTML = ''; // q2OptionsContainerが存在するか確認
-
-        questionSlides.forEach(slide => { // 全スライドの選択解除
-            slide.querySelectorAll('.option.selected').forEach(opt => opt.classList.remove('selected'));
-        });
-        updateQuestionDisplay(); // 最初の質問の表示とイベントリスナーを正しく設定
-        resultSection.classList.remove('active');
-        questionnaireSection.classList.add('active');
-    });
-
+    // 「もう一度診断する」ボタンは削除
+    
     // 「前へ」ボタン
     prevBtn.addEventListener('click', function () {
         if (currentQuestionIndex > 0) {
